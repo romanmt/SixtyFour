@@ -18,6 +18,9 @@ public class SixtyFour extends JavaPlugin implements Listener {
 		if(event.getCurrentItem().getType() == Material.CAKE) {
 			event.getInventory().setMaxStackSize(64);
 		}
+		if(event.getCurrentItem().getType() == Material.EGG) {
+			event.getInventory().setMaxStackSize(64);
+		}
 	}
 
 }
