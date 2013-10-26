@@ -1,6 +1,5 @@
 package com.romanmt.sixtyfour;
 
-import org.bukkit.Material;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.inventory.InventoryClickEvent;
@@ -15,12 +14,8 @@ public class SixtyFour extends JavaPlugin implements Listener {
 
 	@EventHandler
 	public void inventoryClick(InventoryClickEvent event) {
-		if(event.getCurrentItem().getType() == Material.CAKE) {
+		int maxSize = event.getCurrentItem().getMaxStackSize();
+		if(maxSize < 64 && maxSize != -1)
 			event.getInventory().setMaxStackSize(64);
-		}
-		if(event.getCurrentItem().getType() == Material.EGG) {
-			event.getInventory().setMaxStackSize(64);
-		}
 	}
-
 }
